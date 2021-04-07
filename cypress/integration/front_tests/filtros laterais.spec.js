@@ -51,27 +51,7 @@ beforeEach(() => {
 });
 
 
-
-describe('Pesquisa principal', () => {
-
-    it('Marca', () => {
-        cy.filterMain(carro1.marca)
-        cy.validateFilterMain(carro1.marca)
-    });
-
-    it('Modelo', () => {
-        cy.filterMain(carro1.marca + ' ' + carro1.modelo)
-        cy.validateFilterMain(carro1.marca + ' ' + carro1.modelo)
-    });
-
-    it('Resultado não encontrado', () => {
-        cy.filterMainError('texto qualquer')  
-    });
-});
-
-
-
-describe('Pequisa lateral', () => {
+describe.only('Pequisa lateral', () => {
     
     it('3 carros: {1:marca}, {2:marca/modelo}, {3:marca/modelo/versao}', () => {
         
@@ -131,32 +111,6 @@ describe('Pequisa lateral', () => {
         cy.miniFilterNoResults('pesquisa qualquer')
     });
 });
-
-
-
-describe('pesquisa lateral + filtro principal', () => {
-    
-    it('Filtro principal sobrepor filtro lateral', () => {
-
-        cy.filterMake(carro1.marca, posicao.p1)
-        cy.validateFilterMain(carro1.marca)
-        
-        cy.addCar()
-    
-        cy.filterMake(carro2.marca, posicao.p2)
-        cy.filterModel(carro2.modelo, posicao.p2)
-        cy.filterVersion(carro2.versao, posicao.p2)
-        cy.validateFilterMain(carro2.marca + ' ' + carro2.modelo + ' ' + carro2.versao)
-
-        cy.filterMain(carro3.marca + ' ' + carro3.modelo)
-
-        cy.validateFilterMain(carro3.marca + ' ' + carro3.modelo)
-        cy.validateFilterNotExistMain(carro1.marca + ' ' + carro1.modelo + ' ' + carro1.versao)
-        cy.validateFilterNotExistMain(carro2.marca + ' ' + carro2.modelo + ' ' + carro2.versao)
-    });
-    
-});
-
 
 
 describe('Exclusao de filtros, refazer pesquisa', () => {

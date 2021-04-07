@@ -2,9 +2,9 @@
     "$schema": "https://raw.githubusercontent.com/cypress-io/cypress/develop/cli/schema/cypress.schema.json",
     "baseUrl": "https://www.webmotors.com.br/",
     "watchForFileChanges": true,
-    "defaultTimeout": 10000,
+    "defaultTimeout": 20000,
     "pageLoadTimeout": 25000,
-    "defaultCommandTimeout": 8000,
+    "defaultCommandTimeout": 15000,
     "viewportWidth": 1280,
     "viewportHeight": 720
 }
