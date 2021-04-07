@@ -1,0 +1,22 @@
+{
+    "carro1":
+    {
+        "modelo": "honda",
+        "marca": "city",
+        "version": ""
+    },
+
+    "carro2":
+    {
+        "modelo": "ford",
+        "marca": "fusion",
+        "version": "2.5 16V HÍBRIDO 4P AUTOMÁTICO"
+    },
+    
+    "carro3":
+    {
+        "modelo": "asia",
+        "marca": "topic",
+        "version": "luxo"
+    }
+}
