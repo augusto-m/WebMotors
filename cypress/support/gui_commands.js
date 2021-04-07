@@ -208,14 +208,22 @@ Cypress.Commands.add('validateTotalResults', () => {
         }
         else
         {
-            return res
+            cy.get('@getTotalCount')
         }
     })
     
     cy.countResults()
     .then((res2) => {
-        cy.get('@getTotalCount').should('have.contain', res2)    
-    })
+        if(res2 == '')
+        {
+            cy.wait(5000)
+            cy.get('@getTotalCount').should('have.contain', res2)
+        }
+        else
+        {
+            cy.get('@getTotalCount').should('have.contain', res2)
+        }
+    })  
 })
 
 
