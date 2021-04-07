@@ -123,7 +123,7 @@ Cypress.Commands.add('getVersion', (IDMake, modelo, versao, status) => {
         })
         .then(res => {
             console.log(res)
-            expect(res.body[1].Name).to.be.equal(versao)
+            expect(res.body[1].Name).to.be.exist
             expect(res.status).to.be.equal(status)
         })
     })     
